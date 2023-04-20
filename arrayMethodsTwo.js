@@ -9,7 +9,7 @@ let numbers = [40, 68, 14, 90, 49];
     Use forEach method to loop though all the elements in the 'numbers' array above, and divide each element (number) by 2. Print the result in console.
 */
 
-// CODE HERE
+numbers.forEach((element) => console.log(element / 2))
 
 
 ////////// PROBLEM 2 //////////
@@ -22,8 +22,8 @@ let numbers = [40, 68, 14, 90, 49];
     NOTE: make sure you save the code in a variable, then console.log the variable to see the new array.
 */
 
-// CODE HERE
-
+let newArray = numbers.map((element) => (element /2))
+console.log(newArray)
 
 ////////// PROBLEM 3 //////////
 
@@ -49,7 +49,8 @@ let cities = [
     Make sure you save the code in a variable. Then, console.log the variable to see the new array.
 */
 
-// CODE HERE
+let eyeCities = cities.filter((element) => element[element.length-1] === "i")
+console.log(eyeCities)
 
 
 ////////// PROBLEM 4 //////////
@@ -82,10 +83,17 @@ let fruits = [
 /* 
     Using forEach method, identify each element of the 'fruits' array above if it's an apple or orange by its color. If the color is red, print "The fruit with index [THE ELEMENT'S INDEX] is an apple." If the color is orange, print "The fruit with index [THE ELEMENT INDEX] is an orange." If the color is not red or apple, print "The fruit with index [THE ELEMENT'S INDEX] is neither apple or orange."
 
-    Note: do a google search on how to find an element's index of an array in Javascript. There is a built-in Javascript method that would help you find an index of an element in an array.
 */
 
-// CODE HERE
+fruits.forEach((element, index) => {
+  if (element.color === "red") {
+    console.log(`The fruit with index ${index} is an apple.`)
+  } else if (element.color === "orange") {
+      console.log(`The fruit with index ${index} is an orange.`)
+    } else {
+      console.log(`The fruit with index ${index} is neither apple nor orange.`)
+    }
+  })
 
 
 
@@ -144,8 +152,8 @@ let foods = [
     Count the total price of foods that have "rice" tag. Please type the result too.
 */
 
-// CODE HERE
+let totalRicePrice = foods.filter((food) => food.tags.includes("rice")).reduce((acc, curr) => acc + curr.price, 0)
+console.log(totalRicePrice)
 
-
-// THE TOTAL
+// One each of all rice items = $36.00
 
